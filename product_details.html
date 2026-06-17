@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shobji Hub - Organic Carrots Deep Dive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .organic-gradient {
+            background: linear-gradient(180deg, rgba(249, 250, 242, 0) 0%, rgba(249, 250, 242, 1) 100%);
+        }
+        .custom-shadow {
+            box-shadow: 0 4px 20px rgba(45, 106, 79, 0.08);
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#b0f1cc",
+                        "surface-dim": "#d9dbd3",
+                        "primary-fixed-dim": "#95d4b3",
+                        "on-tertiary-fixed": "#301401",
+                        "outline-variant": "#bfc9c1",
+                        "surface-bright": "#f9faf2",
+                        "on-primary-fixed": "#002114",
+                        "surface-container": "#edefe7",
+                        "on-secondary-fixed-variant": "#0c5136",
+                        "on-tertiary-fixed-variant": "#643e24",
+                        "inverse-on-surface": "#f0f1e9",
+                        "surface-variant": "#e2e3db",
+                        "surface-tint": "#2c694e",
+                        "secondary-container": "#b0f1cc",
+                        "on-tertiary-container": "#ffd0b3",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#f2bb98",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#94d4b1",
+                        "primary-fixed": "#b1f0ce",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1a1c18",
+                        "tertiary": "#643e24",
+                        "primary": "#0f5238",
+                        "outline": "#707973",
+                        "tertiary-container": "#7f5539",
+                        "on-primary": "#ffffff",
+                        "background": "#f9faf2",
+                        "surface-container-low": "#f3f4ec",
+                        "inverse-primary": "#95d4b3",
+                        "surface-container-highest": "#e2e3db",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#a8e7c5",
+                        "on-background": "#1a1c18",
+                        "on-secondary-container": "#327053",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#2f312c",
+                        "on-secondary-fixed": "#002113",
+                        "tertiary-fixed": "#ffdcc7",
+                        "on-error-container": "#93000a",
+                        "surface": "#f9faf2",
+                        "surface-container-high": "#e8e9e1",
+                        "primary-container": "#2d6a4f",
+                        "on-surface-variant": "#404943",
+                        "on-primary-fixed-variant": "#0e5138",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#2b694d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "xl": "64px",
+                        "gutter": "20px",
+                        "lg": "40px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "md": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Be Vietnam Pro"],
+                        "display": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Be Vietnam Pro"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "label-sm": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-surface-container-low flex items-center justify-between px-md py-sm w-full transition-colors">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-display font-bold text-primary">Shobji Hub</span>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img alt="User profile" data-alt="A professional and clean studio headshot of a friendly man with a warm smile, set against a soft, neutral-toned background. The lighting is soft and even, highlighting a modern light-mode aesthetic with gentle shadows. The overall mood is approachable and trustworthy, reflecting the brand's community-focused values." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRlMi-MfDifu9q4cCh8CR7Yy1jMdZPw13j4p6xozQI7mPTVEt4L-Sr5CoMaeLo5tJDBLwVhLU5qP67g4_RtqF8IWbfuQamHCzYh8LVs4guGfnXc14DGu5x6eZc9U34W_J41ay4u7G6TQore-kLU63lQzWJqujO76J3ZMuLC-vjmQvvWtpNpUq6UGTQiYlDr27y5iZM6qFxjMzFn03eJMClqKJyiJoyLxxn5b-WF7Uur5-Xzx4Dnbo_eJDQ6-6K7Djs8G51DbcmHg"/>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-gutter md:px-0">
+<div class="flex flex-col md:flex-row gap-lg mt-md">
+<!-- Product Image Section -->
+<div class="w-full md:w-1/2 relative group">
+<div class="aspect-[4/5] rounded-xl overflow-hidden custom-shadow">
+<img alt="Organic Carrots" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A vibrant and detailed close-up shot of a large bunch of freshly harvested organic carrots with their bright green leafy tops still attached. The carrots are covered in a light dusting of rich, dark earth, emphasizing their farm-to-table origin. The lighting is warm and natural, like early morning sun in a lush garden, creating a premium and earthy atmosphere. The background is a soft-focus wooden farm table, reinforcing the modern agrarian aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuOpATKcPSj2jEOwQtOXlL1dY54gRvczvrEFDe77mfNHhJvYNbXPboqHcXI8AXdKPNaQ0O-DcNR3PEzXxi8TzW0hTNn6OM0kPPTbhgoBfGuqACIWSZ2EB088hHkDbC91_bUsijH1TWUmmRCgNhzKYZbADpLu2jih_jUaPa-icqtLgXYQaAAyJd2PUFPgM7CkZsXKbdPW2kL_YIXVHlpzq9Sc_sP8WMOUs2jDPRoOduVjtTlk0iDJWwhd9eoJ3_qMytA_2XvVa90Q"/>
+</div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md">Organic</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Local Farm</span>
+</div>
+</div>
+<!-- Details Section -->
+<div class="w-full md:w-1/2 flex flex-col">
+<nav class="flex items-center gap-xs text-on-surface-variant mb-sm">
+<span class="text-label-sm font-label-sm">Produce</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-label-sm font-label-sm">Root Vegetables</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-xs">Organic Heritage Carrots</h1>
+<p class="text-on-surface-variant mb-md font-body-lg text-body-lg">Grown with care, these carrots offer a crisp texture and an intense sweetness that only comes from nutrient-rich soil.</p>
+<!-- Pricing and Quantity -->
+<div class="bg-surface-container rounded-xl p-md mb-lg border border-outline-variant/30">
+<div class="flex justify-between items-center mb-md">
+<div>
+<span class="text-primary font-display font-bold text-[32px]">$4.50</span>
+<span class="text-on-surface-variant text-label-md">/ bunch (approx. 500g)</span>
+</div>
+<div class="flex items-center bg-surface-container-highest rounded-lg p-1">
+<button class="w-10 h-10 flex items-center justify-center text-primary active:scale-90 transition-transform" id="decrement">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<span class="w-10 text-center font-bold text-on-surface" id="quantity">1</span>
+<button class="w-10 h-10 flex items-center justify-center text-primary active:scale-90 transition-transform" id="increment">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-primary-container transition-colors active:scale-95">
+<span class="material-symbols-outlined">shopping_basket</span>
+                        Add to Cart
+                    </button>
+</div>
+<!-- Info Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
+<!-- Farm Details -->
+<div class="flex gap-sm p-sm bg-surface-container-low rounded-lg border border-[#E9EED9]">
+<span class="material-symbols-outlined text-tertiary">potted_plant</span>
+<div>
+<h3 class="font-label-md text-label-md text-tertiary">Green Valley Farms</h3>
+<p class="text-label-sm text-on-surface-variant">Located 12 miles away in Oakhaven.</p>
+</div>
+</div>
+<!-- Harvest Date -->
+<div class="flex gap-sm p-sm bg-surface-container-low rounded-lg border border-[#E9EED9]">
+<span class="material-symbols-outlined text-secondary">calendar_today</span>
+<div>
+<h3 class="font-label-md text-label-md text-secondary">Harvested On</h3>
+<p class="text-label-sm text-on-surface-variant">Oct 24, 2023 (Yesterday)</p>
+</div>
+</div>
+</div>
+<!-- Sustainable Section (Bento style) -->
+<div class="bg-primary-container/10 border-2 border-primary-fixed rounded-2xl p-md mb-md">
+<div class="flex items-center gap-sm mb-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">eco</span>
+<h2 class="font-headline-md text-headline-md text-primary">Eco-Conscious Packaging</h2>
+</div>
+<p class="text-on-surface-variant text-body-md mb-md">We believe in protecting the earth that feeds us. These carrots are delivered in 100% plastic-free, compostable cellulose wrap.</p>
+<div class="flex flex-wrap gap-sm">
+<span class="bg-surface-container-highest px-3 py-1 rounded-full text-label-sm border border-outline-variant">No Plastic</span>
+<span class="bg-surface-container-highest px-3 py-1 rounded-full text-label-sm border border-outline-variant">Compostable</span>
+<span class="bg-surface-container-highest px-3 py-1 rounded-full text-label-sm border border-outline-variant">Zero Waste</span>
+</div>
+</div>
+</div>
+</div>
+<!-- More from Farm Section -->
+<section class="mt-xl">
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">More from Green Valley</h2>
+<a class="text-primary font-label-md flex items-center gap-1 hover:underline" href="#">View Farm <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+<!-- Suggestion 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-xl overflow-hidden border border-[#E9EED9] mb-sm bg-surface-container">
+<img alt="Organic Potatoes" class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="A top-down view of several earthy organic russet potatoes resting on a textured linen cloth. The lighting is diffused and soft, creating a calm and natural light-mode look. The color palette consists of muted browns and creams, fitting perfectly with a sustainable and farm-rooted brand identity. The focus is sharp, showcasing the natural textures of the potato skin." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKr9lb65XRhCeV08NFfUjDVj5j1sRTRqQn-m1Jvlhlgiy2v_qK5vMrFW5wuzTQRTVKk7SPweVf6QDghu9oyiL22xFn7Bh5o-35cIXbSnNDdGfC_TmvsZC_9zP-COKRJ54y2YjdwkDQgKEZTAInH-I8uJ3VY97VAdI_d4tTEhv3x-GEDCy2qkcT3ikDgjlvH0KAFg_tx9GMnmZ4jKRsXyvssAvMyXnMF2M_MJaNJhfWBn1b-5hafyK95VTWhIoJ3-JBtYnJBFXmtA"/>
+</div>
+<h4 class="font-label-md text-label-md">Russet Potatoes</h4>
+<p class="text-primary font-bold">$3.20</p>
+</div>
+<!-- Suggestion 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-xl overflow-hidden border border-[#E9EED9] mb-sm bg-surface-container">
+<img alt="Fresh Onions" class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="A beautiful cluster of red and yellow organic onions with papery skins, photographed against a minimalist stone background. The lighting is crisp and modern, emphasizing the rich purples and golds of the onion layers. The image conveys a sense of high-quality produce and artisanal farming, following the modern agrarian aesthetic with clean lines and vibrant colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0sxxgf8a_HmGrHzLFlqFSzJRcypG2FDZa1dE9BVtB6BSEHU1K_KfUCFWByL0xU4SVnQFF3V0tbXz-ivfwvevMhEMYlqqZQFF9YXJEfamx6YotHIDCeytr7KLowx1KfG1uINpwfeHHiYXfCHRq2MYY-OSPfxZHOTOYM_uVRH0a_LgpxRrKuNpQWXSrrE5-hklD8Uzi4RONaruYY_p5Z0uw-k9VA1-OvnCaBWvwzThFa7wRHLNZt1kfHwqOZBm-uLHYJ5Gpf_yh1Q"/>
+</div>
+<h4 class="font-label-md text-label-md">Red Onions</h4>
+<p class="text-primary font-bold">$2.50</p>
+</div>
+<!-- Suggestion 3 -->
+<div class="hidden md:block group cursor-pointer">
+<div class="aspect-square rounded-xl overflow-hidden border border-[#E9EED9] mb-sm bg-surface-container">
+<img alt="Fresh Garlic" class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="Macro photography of whole organic garlic bulbs with delicate, translucent skins. The scene is illuminated by soft, directional light that creates a gentle play of light and shadow, highlighting the organic shape of the bulbs. The overall feel is clean, premium, and healthy, using a palette of whites and soft greens to align with the brand's sustainable ethos." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1ME7lrXnDTlkcVZmj0dkgg8bkrISBUDz2wUnMymway2n57wqa9h-RUkuc_tUVVgyk-qxATU1bWh0LrLZfbXk2rPuzFIbWPnEZVuzYJE8R9b_oj0MdwPVA8E767UyGj2V3G8w3Y68Z7gVlp_ZV7_icT-3bC8TsriHnUMbb9n8uZWvSu-8nTzYVjldM0uUGqD2TVQjJTJrFdHvqQlGFVXp4X1TJqKcUz5HYXLILC3ChzQkml5Xpmbmjl3ytikv-JNIQQFJgWQBuSg"/>
+</div>
+<h4 class="font-label-md text-label-md">Organic Garlic</h4>
+<p class="text-primary font-bold">$1.80</p>
+</div>
+<!-- Suggestion 4 -->
+<div class="hidden md:block group cursor-pointer">
+<div class="aspect-square rounded-xl overflow-hidden border border-[#E9EED9] mb-sm bg-surface-container">
+<img alt="Heirloom Radishes" class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="A vibrant bunch of pink and red heirloom radishes with fresh green stems, presented on a light earthy-toned surface. The bright, high-key lighting enhances the saturation of the vegetables, making them look crisp and juicy. The aesthetic is clean and high-end, focusing on the beauty of raw organic ingredients in a sophisticated, minimalist kitchen setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtXmVmYlULkXG9WgDTNVH8ATrmswSlW2Ta2JFkU1zoMBTqYmLJCyb737PEpByLQPYxG_0JE4TSwUE7hqFXfQ35bKHSts6o4beZfPEXTxFZRx3f6yetWtKonN7pC3e019hTGI3jSDXLCj7ejIZjaz0sv5R084H7-h99vehAY8zjcr1PJme6QH2BOSCZmNhMF5HhExNm49_ByV9MmWv6DpjPf7Z4x6gsZjZuLlI6y3VYxkak17vaP_Hv4Yb36wYkRXgkKYhey87wFQ"/>
+</div>
+<h4 class="font-label-md text-label-md">Heirloom Radishes</h4>
+<p class="text-primary font-bold">$3.90</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter py-2 bg-surface dark:bg-surface-container-lowest shadow-sm">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 px-4 py-1">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 px-4 py-1">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-xl px-4 py-1 transition-transform active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+<span class="font-label-sm text-label-sm">Cart</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 px-4 py-1">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</button>
+</nav>
+<script>
+        // Quantity Selector Interaction
+        const qtyDisplay = document.getElementById('quantity');
+        const incBtn = document.getElementById('increment');
+        const decBtn = document.getElementById('decrement');
+        let currentQty = 1;
+
+        incBtn.addEventListener('click', () => {
+            currentQty++;
+            qtyDisplay.innerText = currentQty;
+        });
+
+        decBtn.addEventListener('click', () => {
+            if (currentQty > 1) {
+                currentQty--;
+                qtyDisplay.innerText = currentQty;
+            }
+        });
+
+        // Simple scroll effect for Header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-sm');
+                header.classList.remove('bg-surface-container-low');
+                header.classList.add('bg-surface');
+            } else {
+                header.classList.remove('shadow-sm');
+                header.classList.add('bg-surface-container-low');
+                header.classList.remove('bg-surface');
+            }
+        });
+    </script>
+</body></html>
