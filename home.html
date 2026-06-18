@@ -1,12 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Shobji Hub</title>
+    <title>Shobji Hub - সবজি হাব</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        header { background-color: #4CAF50; color: white; padding: 15px; text-align: center; }
+        .search-container { padding: 15px; text-align: center; background: white; }
+        .search-container input { width: 80%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        .section-title { font-size: 20px; font-weight: bold; margin: 20px 15px 10px; }
+        .categories, .products { display: flex; overflow-x: auto; padding: 10px; }
+        .category-item, .product-item { background: white; border-radius: 8px; margin: 0 10px; min-width: 120px; text-align: center; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .product-item img { max-width: 100px; height: auto; border-radius: 8px; }
+        .product-name { font-weight: bold; margin: 10px 0 5px; }
+        .product-price { color: #e91e63; font-weight: bold; }
+        .add-btn { background-color: #4CAF50; color: white; border: none; padding: 8px 12px; border-radius: 4px; margin-top: 10px; cursor: pointer; }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Shobji Hub Home</h1>
-    <p>This is the home page for your grocery app.</p>
+
+    <header>
+        <h1>সবজি হাব (Shobji Hub)</h1>
+    </header>
+
+    <div class="search-container">
+        <input type="text" placeholder="সবজি খুঁজুন...">
+    </div>
+
+    <div class="section-title">বিভাগ সমূহ</div>
+    <div class="categories">
+        <div class="category-item">সবুজ সবজি</div>
+        <div class="category-item">মূল জাতীয় সবজি</div>
+        <div class="category-item">ফল</div>
+        <div class="category-item">মসলা</div>
+    </div>
+
+    <div class="section-title">জনপ্রিয় সবজি</div>
+    <div class="products">
+        <div class="product-item">
+            <img src="https://via.placeholder.com/100" alt="গাজর">
+            <div class="product-name">গাজর</div>
+            <div class="product-price">৪০ টাকা / কেজি</div>
+            <button class="add-btn">কার্টে যোগ করুন</button>
+        </div>
+        <div class="product-item">
+            <img src="https://via.placeholder.com/100" alt="আলু">
+            <div class="product-name">আলু</div>
+            <div class="product-price">২৫ টাকা / কেজি</div>
+            <button class="add-btn">কার্টে যোগ করুন</button>
+        </div>
+        <div class="product-item">
+            <img src="https://via.placeholder.com/100" alt="টমেটো">
+            <div class="product-name">ٹমেটো</div>
+            <div class="product-price">৫০ টাকা / কেজি</div>
+            <button class="add-btn">কার্টে যোগ করুন</button>
+        </div>
+    </div>
+
 </body>
 </html>
+
