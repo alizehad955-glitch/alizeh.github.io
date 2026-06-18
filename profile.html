@@ -3,48 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shobji Hub - Profile</title>
+    <title>Profile - Blinkit Style</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        header { background-color: #4CAF50; color: white; padding: 15px; text-align: center; }
-        .profile-header { background: white; padding: 20px; text-align: center; border-bottom: 1px solid #ddd; }
-        .profile-img { width: 80px; height: 80px; border-radius: 50%; background-color: #ccc; margin-bottom: 10px; }
-        .user-name { font-size: 20px; font-weight: bold; margin-bottom: 5px; }
-        .user-phone { font-size: 14px; color: #777; }
-        .section-title { font-size: 16px; font-weight: bold; margin: 20px 15px 10px; color: #555; }
-        .list-group { background: white; list-style-type: none; padding: 0; margin: 0; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
-        .list-item { padding: 15px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; cursor: pointer; color: #333; }
-        .list-item:last-child { border-bottom: none; }
-        .list-item:hover { background-color: #f9f9f9; }
-        .arrow { color: #aaa; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f5f7;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ffffff;
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #3b3b3b;
+        }
+        .profile-header {
+            background-color: #ffffff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .profile-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            margin-right: 15px;
+        }
+        .user-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #222222;
+        }
+        .user-phone {
+            font-size: 14px;
+            color: #717171;
+            margin-top: 5px;
+        }
+        .section-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #8c8c8c;
+            padding: 15px 15px 5px;
+            margin-top: 10px;
+        }
+        .list-group {
+            background-color: #ffffff;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .list-item {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 16px;
+            color: #222222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .list-item:last-child {
+            border-bottom: none;
+        }
+        .list-item:hover {
+            background-color: #f9f9f9;
+        }
+        .arrow {
+            color: #bdbdbd;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Profile</h1>
+        <h1>My Profile</h1>
     </header>
 
     <div class="profile-header">
         <div class="profile-img"></div>
-        <div class="user-name">Guest User</div>
-        <div class="user-phone">8391001173</div>
+        <div>
+            <div class="user-name">Guest User</div>
+            <div class="user-phone">8391001173</div>
+        </div>
     </div>
 
-    <div class="section-title">Your information</div>
+    <div class="section-title">YOUR INFORMATION</div>
     <ul class="list-group">
-        <li class="list-item">Address book <span class="arrow">></span></li>
-        <li class="list-item">Your wishlist <span class="arrow">></span></li>
+        <li class="list-item">
+            Address Book
+            <span class="arrow">></span>
+        </li>
+        <li class="list-item">
+            Your Wishlist
+            <span class="arrow">></span>
+        </li>
     </ul>
 
-    <div class="section-title">Payment and coupons</div>
+    <div class="section-title">PAYMENTS & COUPONS</div>
     <ul class="list-group">
-        <li class="list-item">Payment settings <span class="arrow">></span></li>
-    </ul>
-
-    <ul class="list-group" style="margin-top: 20px;">
-        <li class="list-item" style="color: #e91e63;">Log out <span class="arrow">></span></li>
+        <li class="list-item">
+            Payment Settings
+            <span class="arrow">></span>
+        </li>
     </ul>
 
 </body>
 </html>
+
